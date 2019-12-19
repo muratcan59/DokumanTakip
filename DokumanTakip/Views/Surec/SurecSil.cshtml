@@ -1,0 +1,114 @@
+﻿@model DokumanTakip.Model.Surec
+
+@{
+    ViewBag.Title = "SurecSil";
+}
+
+<h2></h2>
+
+<h3></h3>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Süreç</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Süreç</a></li>
+                        <li class="breadcrumb-item active">Süreç Sil</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Süreç Sil</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <div>
+                            <h4></h4>
+                            <hr />
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.KayitTarihi)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.KayitTarihi)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.AktifMi)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.AktifMi)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.SurecAdi)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.SurecAdi)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.TakipNo)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.TakipNo)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.GenelBilgi)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.GenelBilgi)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.SonTamamlanmaTarih)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.SonTamamlanmaTarih)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.IsBilgisi.IsAdi)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.IsBilgisi.IsAdi)
+                                </dd>
+
+                            </dl>
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-actions no-color">
+                                    <input type="submit" value="Sil" class="btn btn-danger" /> |
+                                    @Html.ActionLink("Listeye Git", "/AktifSurec")
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

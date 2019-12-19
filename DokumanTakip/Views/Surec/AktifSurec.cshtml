@@ -1,0 +1,93 @@
+﻿@model IEnumerable<DokumanTakip.Model.Surec>
+
+@{
+    ViewBag.Title = "AktifSurec";
+}
+
+<h2></h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Süreç</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Süreç Türleri</a></li>
+                        <li class="breadcrumb-item active">Aktif Süreç</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Aktif Süreç</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example2" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Süreç Adı
+                                    </th>
+                                    <th>
+                                        Takip No
+                                    </th>
+                                    <th>
+                                        Genel Bilgi
+                                    </th>
+                                    <th>
+                                        Son Tamamlanma Tarihi
+                                    </th>
+                                    <th>
+                                        İş Adı
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.SurecAdi)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TakipNo)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.GenelBilgi)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.SonTamamlanmaTarih)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IsBilgisi.IsAdi)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("E", "/SurecDuzenle", new { id = item.Id }, new { @class = "btn btn-success far fa-edit" }) 
+
+                                            @Html.ActionLink("D", "/SurecSil", new { id = item.Id }, new { @class = "btn btn-danger far fa-trash-alt" })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

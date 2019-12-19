@@ -1,0 +1,8 @@
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Model\obj\Debug\DokumanTakip.Model.csprojAssemblyReference.cache
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Model\bin\Debug\DokumanTakip.Model.dll
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Model\bin\Debug\DokumanTakip.Model.pdb
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Model\obj\Debug\DokumanTakip.Model.csproj.CopyComplete
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Model\obj\Debug\DokumanTakip.Model.dll
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Model\obj\Debug\DokumanTakip.Model.pdb

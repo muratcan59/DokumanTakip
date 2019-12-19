@@ -1,0 +1,17 @@
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\obj\Debug\DokumanTakip.Dal.csprojAssemblyReference.cache
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\bin\Debug\DokumanTakip.Dal.dll.config
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\bin\Debug\DokumanTakip.Dal.dll
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\bin\Debug\DokumanTakip.Dal.pdb
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\bin\Debug\DokumanTakip.Model.dll
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\bin\Debug\EntityFramework.dll
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\bin\Debug\Newtonsoft.Json.dll
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\bin\Debug\DokumanTakip.Model.pdb
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\bin\Debug\EntityFramework.xml
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\bin\Debug\Newtonsoft.Json.xml
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\obj\Debug\DokumanTakip.Dal.csproj.CopyComplete
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\obj\Debug\DokumanTakip.Dal.dll
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\obj\Debug\DokumanTakip.Dal.pdb
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\obj\Debug\DokumanTakip.Dal.Migrations.v30.resources
+C:\Users\murat\source\repos\DokumanTakip\DokumanTakip.Dal\obj\Debug\DokumanTakip.Dal.csproj.GenerateResource.cache
