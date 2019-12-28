@@ -2264,7 +2264,7 @@
     <Content Include="Views\Surec\AktifSurec.cshtml" />
     <Content Include="Views\Surec\AylikSurec.cshtml" />
     <Content Include="Views\Surec\DevredilenIs.cshtml" />
-    <Content Include="Views\Is\AcilIsler.cshtml" />
+    <Content Include="Views\Is\HaftalikIsler.cshtml" />
     <Content Include="Views\Is\NormalIsler.cshtml" />
     <Content Include="Views\Is\TamamlanmisIsler.cshtml" />
     <None Include="Web.Debug.config">
