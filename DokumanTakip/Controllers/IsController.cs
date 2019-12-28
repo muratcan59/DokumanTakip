@@ -12,25 +12,29 @@ namespace DokumanTakip.Controllers
     public class IsController : Controller
     {
         [AdminLoginFilter]
-        public ActionResult AcilIsler()
+        public ActionResult HaftalikIsler()
         {
             IsRepository repo = new IsRepository();
-            var sonuc = repo.GetByFilter(x => x.CozumTarihi.Day == (DateTime.Now.Day - 7)).ToList();
+            var date = DateTime.Now.AddDays(-7);
+            var sonuc = repo.GetByFilter(x => x.CozumTarihi >= date && x.AktifMi == false).ToList();
             return View(sonuc);
         }
+        [AdminLoginFilter]
         public ActionResult NormalIsler()
         {
             IsRepository repo = new IsRepository();
             var sonuc = repo.GetByFilter(x => x.AktifMi == false).ToList();
             return View(sonuc);
         }
+        [AdminLoginFilter]
         public ActionResult TamamlanmisIsler()
         {
             IsRepository repo = new IsRepository();
-            var sonuc = repo.GetByFilter(x => x.CozumTarihi >= DateTime.Now).ToList();
+            var sonuc = repo.GetByFilter(x => x.CozumTarihi <= DateTime.Now && x.AktifMi == false).ToList();
             return View(sonuc);
         }
 
+        [AdminLoginFilter]
         [HttpGet]
         public ActionResult IsEkle()
         {
@@ -40,6 +44,7 @@ namespace DokumanTakip.Controllers
             return View();
         }
 
+        
         [HttpPost]
         public ActionResult IsEkle(Is model)
         {
@@ -51,18 +56,22 @@ namespace DokumanTakip.Controllers
             return RedirectToAction(nameof(IsEkle));
         }
 
+        [AdminLoginFilter]
         [HttpGet]
         public ActionResult IsDuzenle(int id)
-        {
+        {            
             IsRepository repo = new IsRepository();
             ViewBag.Isler = repo.GetByFilter(x => x.AktifMi == false).ToList();
             var sonuc = repo.GetById(id);
             return View(sonuc);
         }
 
+        
         [HttpPost]
         public ActionResult IsDuzenle(Is model)
         {
+            model.AktifMi = false;
+            model.KayitTarihi = DateTime.Now;
             IsRepository repo = new IsRepository();
             var sonuc = repo.Update(model);
             return RedirectToAction(nameof(NormalIsler));

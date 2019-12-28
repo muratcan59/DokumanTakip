@@ -18,19 +18,22 @@ namespace DokumanTakip.Controllers
             var sonuc = repo.GetByFilter(x => x.AktifMi == false).ToList();
             return View(sonuc);
         }
+        [AdminLoginFilter]
         public ActionResult AylikSurec()
         {
             SurecRepository repo = new SurecRepository();
-            var sonuc = repo.GetByFilter(x => x.SonTamamlanmaTarih.Month == (DateTime.Now.Month - 1)).ToList();
+            var month = DateTime.Now.AddMonths(-1);
+            var sonuc = repo.GetByFilter(x => x.SonTamamlanmaTarih >= month && x.AktifMi == false).ToList();
             return View(sonuc);
         }
+        [AdminLoginFilter]
         public ActionResult DevredilenIs()
         {
             SurecRepository repo = new SurecRepository();
             var sonuc = repo.GetByFilter(x => x.AktifMi == true).ToList();
             return View(sonuc);
         }
-
+        [AdminLoginFilter]
         [HttpGet]
         public ActionResult SurecEkle()
         {
@@ -53,21 +56,26 @@ namespace DokumanTakip.Controllers
             TempData["Mesaj"] = sonuc ? new TempDataDictionary { { "class", "alert-success" }, { "Msg", "Süreç eklendi." } } : new TempDataDictionary { { "class", "alert-danger" }, { "Msg", "Süreç eklenemedi." } };
             return RedirectToAction(nameof(SurecEkle));
         }
-
+        [AdminLoginFilter]
         [HttpGet]
         public ActionResult SurecDuzenle(int id)
         {
+            IsRepository rep = new IsRepository();
+            var isler = rep.GetByFilter(x => x.AktifMi == false).ToList();
+            ViewBag.Isler = isler;
             SurecRepository repo = new SurecRepository();
-            ViewBag.Isler = repo.GetByFilter(x => x.AktifMi == false).ToList();
-            var sonuc = repo.GetById(id);
+            var sonuc = repo.GetById(id);            
             return View(sonuc);
         }
 
         [HttpPost]
         public ActionResult SurecDuzenle(Surec model)
         {
+            model.AktifMi = false;
+            model.KayitTarihi = DateTime.Now;
             SurecRepository repo = new SurecRepository();
             var sonuc = repo.Update(model);
+            //TempData["Mesaj"] = sonuc ? new TempDataDictionary { { "class", "alert-success" }, { "Msg", "Süreç düzenlendi." } } : new TempDataDictionary { { "class", "alert-danger" }, { "Msg", "Süreç düzenlemedi." } };
             return RedirectToAction(nameof(AktifSurec));
         }
 
@@ -75,6 +83,7 @@ namespace DokumanTakip.Controllers
         {
             SurecRepository repo = new SurecRepository();
             bool sonuc = repo.SoftDelete(id);
+            //TempData["Mesaj"] = sonuc ? new TempDataDictionary { { "class", "alert-success" }, { "Msg", "Süreç silindi." } } : new TempDataDictionary { { "class", "alert-danger" }, { "Msg", "Süreç silinemedi." } };
             return RedirectToAction(nameof(AktifSurec));
         }
     }
