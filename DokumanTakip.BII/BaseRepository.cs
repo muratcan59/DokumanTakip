@@ -11,7 +11,7 @@ namespace DokumanTakip.BII
 {
     public class BaseRepository<T> : IDisposable where T : class, new()
     {
-        protected readonly DokumanTakipContext context = new DokumanTakipContext();
+        protected  DokumanTakipContext context = new DokumanTakipContext();
 
         public bool Add(T data)
         {
@@ -66,6 +66,7 @@ namespace DokumanTakip.BII
             return context.Set<T>().Where(filter).ToList();
         }
 
+        //Temel sınıf yöntemini geçersiz kılan ve türetilen sınıfın kaynaklarını serbest bırakma işinin asıl işini gerçekleştiren bir protected Dispose(Boolean) yöntemi. Bu yöntem ayrıca temel sınıfın Dispose(Boolean) yöntemini çağırmalıdır ve bağımsız değişkeni için disposing durumunu iletmelidir.
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
 
@@ -77,7 +78,7 @@ namespace DokumanTakip.BII
                 {
                     // TODO: dispose managed state (managed objects).
                 }
-
+                
                 // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
                 // TODO: set large fields to null.
 
