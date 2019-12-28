@@ -14,7 +14,7 @@ namespace DokumanTakip.Model
         public int Id { get; set; }
 
         [DefaultValue("12-12-2012")]
-        [DataType(DataType.DateTime)]
+        //[DataType(DataType.DateTime)]
         public DateTime KayitTarihi { get; set; }
 
         [DefaultValue(false)]
