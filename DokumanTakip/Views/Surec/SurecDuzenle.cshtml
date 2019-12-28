@@ -36,7 +36,7 @@
                         @using (Html.BeginForm())
                         {
                             @Html.AntiForgeryToken()
-
+                            @*@Html.Partial("MessagePartial", TempData["Mesaj"])*@
                             <div class="form-horizontal">
                                 <h4>Surec</h4>
                                 <hr />
@@ -76,7 +76,7 @@
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.IsBilgisi.IsAdi, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-10">
-                                        @Html.DropDownListFor(x => x.IsBilgisi.IsAdi, new SelectList(ViewBag.Isler as List<Is>, "Id", "IsAdi"), "Seçiniz", new { @class = "form-control" })
+                                        @Html.DropDownListFor(x => x.IsId, new SelectList(ViewBag.Isler as List<Is>, "Id", "IsAdi"), "Seçiniz", new { @class = "form-control" })
                                         @Html.ValidationMessageFor(model => model.IsBilgisi.IsAdi, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -89,10 +89,10 @@
                             </div>
                         }
 
-                            <div style="margin-left:1%">
-                                @Html.ActionLink("Listeye Git", "/AktifSurec")
-                            </div>
+                        <div style="margin-left:1%">
+                            @Html.ActionLink("Listeye Git", "/AktifSurec")
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

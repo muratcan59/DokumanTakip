@@ -7,8 +7,8 @@
 <h2></h2>
 
 @*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -36,7 +36,7 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="example2" class="table table-striped table-bordered">
+                        <table id="example1" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                     <th>
@@ -77,9 +77,8 @@
                                             @Html.DisplayFor(modelItem => item.IsBilgisi.IsAdi)
                                         </td>
                                         <td>
-                                            @Html.ActionLink("E", "/SurecDuzenle", new { id = item.Id }, new { @class = "btn btn-success far fa-edit" }) 
-
-                                            @Html.ActionLink("D", "/SurecSil", new { id = item.Id }, new { @class = "btn btn-danger far fa-trash-alt" })
+                                            @Html.ActionLink(" ", "/SurecDuzenle", new { id = item.Id }, new { @class = "btn btn-success far fa-edit" })
+                                            <button type="button" id="@item.Id" class="btn btn-danger far fa-trash-alt" onclick="SilinecekDatayiAta(@item.Id)" data-toggle="modal" data-target="#exampleModal"></button>
                                         </td>
                                     </tr>
                                 }
@@ -91,3 +90,34 @@
         </div>
     </section>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Emin Misiniz?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Seçili süreci silmek istediğinizden emin misiniz?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-primary" onclick="SurecSil()">Sil</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var silinecekData = 0;
+    function IsSil() {
+        window.location = "/Surec/SurecSil/" + silinecekData;
+        }
+    function SilinecekDatayiAta(id) {
+        silinecekData = id;
+    }
+</script>

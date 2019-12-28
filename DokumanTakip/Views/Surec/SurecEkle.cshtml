@@ -75,7 +75,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.IsId, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.LabelFor(model => model.IsBilgisi.IsAdi, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-10">
                                         @Html.DropDownListFor(x => x.IsId, new SelectList(ViewBag.Isler as List<Is>, "Id", "IsAdi"), "Seçiniz", new { @class = "form-control" })
                                         @Html.ValidationMessageFor(model => model.IsId, "", new { @class = "text-danger" })
